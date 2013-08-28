@@ -1,0 +1,18 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="stock.ChinaStockWebServiceSoap" class="org.apache.cxf.jaxws.JaxWsProxyFactoryBean">
+		<property name="serviceClass"
+			value="com.springtour.stock.service.ChinaStockWebServiceSoap" />
+		<property name="address"
+			value="http://webservice.webxml.com.cn/WebServices/ChinaStockWebService.asmx" />
+	</bean>
+
+	<bean id="stock.ChinaStockWebServiceSoapWsFacade" class="com.springtour.stock.service.ChinaStockWebServiceSoap"
+		factory-bean="stock.ChinaStockWebServiceSoap" factory-method="create" />
+
+
+</beans>   
