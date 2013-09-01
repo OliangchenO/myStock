@@ -6,12 +6,12 @@
 
 	<bean id="stock.ChinaStockWebServiceSoap" class="org.apache.cxf.jaxws.JaxWsProxyFactoryBean">
 		<property name="serviceClass"
-			value="com.springtour.stock.service.ChinaStockWebServiceSoap" />
+			value="com.stock.webservice.ChinaStockWebServiceSoap" />
 		<property name="address"
 			value="http://webservice.webxml.com.cn/WebServices/ChinaStockWebService.asmx" />
 	</bean>
 
-	<bean id="stock.ChinaStockWebServiceSoapWsFacade" class="com.springtour.stock.service.ChinaStockWebServiceSoap"
+	<bean id="stock.ChinaStockWebServiceSoapWsFacade" class="com.stock.webservice.ChinaStockWebServiceSoap"
 		factory-bean="stock.ChinaStockWebServiceSoap" factory-method="create" />
 
 
